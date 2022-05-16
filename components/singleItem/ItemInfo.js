@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { addItem } from '../../store/cart';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import { Rating } from 'react-simple-star-rating'
 import SizesContainer from './SizesContainer';
 import classes from './ItemInfo.module.css';
 
@@ -43,13 +42,6 @@ const ItemInfo = ({product, sizes}) => {
         }));
     }
 
-    // const starsSettings = {
-    //     readonly: true,
-    //     ratingValue: product.rating,
-    //     transition: true,
-    //     size: 25
-    // }
-
     const sizesEventHandler = (size) => {
         setSize(size);
     }
@@ -57,9 +49,6 @@ const ItemInfo = ({product, sizes}) => {
     return (
         <div className={classes.itemInfo}>
             <h1>{ product.title }</h1>
-            {/* <Rating
-            {...starsSettings}
-            /> */}
             <p className={classes.price}>${ product.price }</p>
             <p className={classes.description}>{ product.description }</p>
             <SizesContainer sizes={sizes} sizesEventHandler={sizesEventHandler}/>
