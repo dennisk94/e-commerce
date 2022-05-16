@@ -1,0 +1,23 @@
+.container { 
+    /* display: flex;
+    flex-direction: row;
+    column-gap: 5rem; */
+    display: grid;
+    max-width: 1200px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    margin: 4rem auto;
+}
+
+@media ( min-width: 37.5em ) {
+    .container {
+        display: grid;
+        grid-template-columns: minmax(300px, 800px) 1fr;
+        grid-template-rows: 1fr;
+        align-items: start;
+        max-width: 1200px;
+        margin: 4rem auto;
+    }
+}

@@ -1,0 +1,32 @@
+.product {
+    margin: 1rem;
+}
+
+.productImage{
+    position: relative;
+}
+
+.productImage img {
+    border-radius: .5rem;
+}
+
+.productPrice {
+    position: absolute;
+    bottom: 0.2rem;
+    left: 0.7rem;
+    padding: 0 .3rem;
+    background-color: #E0EBFC;
+}
+
+.productInfo {
+    display: inline-flex;
+    flex-direction: column;
+    margin-top: .5rem;
+}
+
+.productInfo p {
+    display: inline-block;
+    margin: .5rem 0 0 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+}

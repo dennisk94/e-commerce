@@ -1,0 +1,13 @@
+.banner { 
+    overflow: hidden;
+}
+
+.banner {
+    position: relative;
+}
+
+@media ( min-width: 62.5em ) {
+    .banner {
+        height: 92vh;
+    }
+}

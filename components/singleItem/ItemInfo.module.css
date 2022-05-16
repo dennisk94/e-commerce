@@ -1,0 +1,42 @@
+.itemInfo {
+    min-width: 300px;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.addToCart {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.addToCart input {
+    text-align: center;
+    padding: .3rem;
+    font-size: 1.2rem;
+}
+
+.addToCart button {
+    font-size: 1.3rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    padding: .5rem;
+    border: none;
+    border-radius: .3rem;
+    color: white;
+    background-color: #3762CC;
+    transition: ease-in-out .3s;
+}
+
+.addToCart button:hover {
+    background-color: #4671C6;
+}
+
+@media ( min-width: 50em ) {
+    .description {
+        max-width: 400px;
+    }
+}

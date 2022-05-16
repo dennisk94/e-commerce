@@ -1,0 +1,22 @@
+.select { 
+    font-size: 1.3rem;
+    font-weight: 700;
+    border: 1px solid black;
+    padding: .6rem .7rem;
+    border-radius: 0.2rem;
+    margin: 1rem 0 2rem 0;
+}
+
+.select option { 
+    font-weight: 700;
+}
+
+.collectionContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-width: 300px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
