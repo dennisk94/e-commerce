@@ -5,8 +5,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { successful } from '../store/cart';
 import Banner from '../components/banner/Banner';
 import Collection from '../components/collections/Collection';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 const HomePage = (props) => {
   
@@ -69,7 +69,7 @@ const HomePage = (props) => {
       </Head>
       <Banner />
       <Collection products={filteredProducts} productsFilter={productsFilter}/>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </div>
   )
 }
