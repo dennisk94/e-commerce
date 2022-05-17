@@ -1,6 +1,6 @@
 import classes from './CustomerInfo.module.css';
 import { useRef } from 'react';
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const CustomerInfo = ({orderHandler, successfulOrder}) => {
 

@@ -2,12 +2,10 @@ import Head from 'next/head';
 import Router from "next/router";
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect, useState } from "react";
-import { resetCart, successful } from '../../store/cart';
+import { resetCart } from '../../store/cart';
 import CustomerInfo from "../../components/checkout/CustomerInfo";
 import OrderSummary from "../../components/checkout/OrderSummary";
 import Notification from '../../ui/notification';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import classes from './index.module.css';
 
 const CheckoutPage = () => {
@@ -36,20 +34,6 @@ const CheckoutPage = () => {
       }
     }, [requestStatus]);
 
-    useEffect(() => {
-      if ( requestStatus === 'success' ) {
-        toast.success('Your order has been placed!', {
-          position: "top-right",
-          autoClose: 2500,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          });
-      }
-    });
-
     const cart = useSelector( state => state.cart.totalQuantity);
     const orderHandler = async ( customerInfo, cart ) => {
       const order = {
@@ -72,12 +56,8 @@ const CheckoutPage = () => {
           throw new Error(data.message || 'Something went wrong!');
         }
         setRequestStatus('success');
-        // setSuccessfulOrder(true);
+        setSuccessfulOrder(true);
         dispatch( resetCart() );
-        // dispatch( successful() );
-        
-          // dispatch( successful() );
-        // Router.push('/');
       } catch (error) {
         setRequestError(error.message);
         setRequestStatus('error');
@@ -121,7 +101,6 @@ const CheckoutPage = () => {
         {
           notification && <Notification status={notification.status} title={notification.title} message={notification.message}/>
         }
-        <ToastContainer />
     </div>
   )
 }
