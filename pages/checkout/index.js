@@ -36,6 +36,20 @@ const CheckoutPage = () => {
       }
     }, [requestStatus]);
 
+    useEffect(() => {
+      if ( requestStatus === 'success' ) {
+        toast.success('Your order has been placed!', {
+          position: "top-right",
+          autoClose: 2500,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
+      }
+    });
+
     const cart = useSelector( state => state.cart.totalQuantity);
     const orderHandler = async ( customerInfo, cart ) => {
       const order = {
@@ -61,15 +75,7 @@ const CheckoutPage = () => {
         // setSuccessfulOrder(true);
         dispatch( resetCart() );
         // dispatch( successful() );
-        toast.success('Your order has been placed!', {
-          position: "top-right",
-          autoClose: 2500,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          });
+        
           // dispatch( successful() );
         // Router.push('/');
       } catch (error) {

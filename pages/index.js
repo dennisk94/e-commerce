@@ -1,34 +1,14 @@
 import Head from 'next/head';
 import { MongoClient } from 'mongodb';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { successful } from '../store/cart';
 import Banner from '../components/banner/Banner';
 import Collection from '../components/collections/Collection';
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
 
 const HomePage = (props) => {
   
   const { products } = props;
   const [ filteredProducts, setFilteredProducts ] = useState(products);
-  const success = useSelector( state => state.cart.successful);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if ( success ) {
-      toast.success('Your order has been placed!', {
-        position: "top-right",
-        autoClose: 2500,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        });
-        dispatch( successful() );
-    }
-  });
 
   const productsFilter = (category) => {
 
@@ -69,7 +49,6 @@ const HomePage = (props) => {
       </Head>
       <Banner />
       <Collection products={filteredProducts} productsFilter={productsFilter}/>
-      {/* <ToastContainer /> */}
     </div>
   )
 }
