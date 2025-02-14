@@ -1,6 +1,6 @@
 # Shoe Depot
 
-A single page e-commerce website designed for a frictional client using Next.js, Redux and MongoDB.
+A single page e-commerce website designed for a fictional client using Next.js, Redux and MongoDB.
 
 View the Site: [Live Site](https://shoe-depot-nextjs.vercel.app/)
 
